@@ -3,14 +3,14 @@
 # parameter: single integer
 # output: Print String to console
 def check_speed(speed)
-  if speed > 55
-    puts "too fast"
-  end
-  if speed < 55
+  if speed < 45
     puts "too slow"
   end
-  if speed == 55
+  if speed >= 45 && speed <= 60
     puts "speed OK"
+  end
+  if speed > 60
+    puts "too fast"
   end
 end
 check_speed(25)
