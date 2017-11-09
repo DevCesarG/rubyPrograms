@@ -13,11 +13,11 @@ def price(quantity)
   if quantity >= 100
     puts "Purchasing more than 100 gives you a discount! ($75 per unit)"
     return quantity * 75
-  end
-  
-  if quantity >= 50 && quantity < 100
+  elsif quantity >= 50 && quantity < 100
     puts "Purchasing more than 50 gives you a discount! ($80 per unit)"
     return quantity * 80
+  else
+    return quantity * 100
   end
 end
 
