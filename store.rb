@@ -10,11 +10,15 @@ end
 
 def price(quantity)
   # Check if the customer is purchasing more than 100 units
-  if quantity > 100
-    puts "Purchasing more than 100 gives you a discount! ($80 per unit)"
+  if quantity >= 100
+    puts "Purchasing more than 100 gives you a discount! ($75 per unit)"
+    return quantity * 75
+  end
+  
+  if quantity >= 50 && quantity < 100
+    puts "Purchasing more than 50 gives you a discount! ($80 per unit)"
     return quantity * 80
   end
-  return quantity * 100
 end
 
 def sequence(quantity, cost)
@@ -34,7 +38,7 @@ def sequence(quantity, cost)
   puts "Total: $#{cost}"
 end
 puts "Welcome to widget store"
-answer = ask("How many widgets would you like to buy? ")
+answer = ask("Discounts\n_________\n50 or more: 80$ per unit\n100 or more: :$75 per unit\nHow many widgets would you like to buy? ")
 total_amount = price(answer.to_i)
 
 sequence(answer, total_amount)
